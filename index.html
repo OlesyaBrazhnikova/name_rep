@@ -9,12 +9,22 @@
 <body>
 	<div class="naxt_commit">It is my next commit</div>
 	<span class="commit">It is my next commit</span>
-	<span>git commit -m ""</span>
-	<span>git remote</span> 
-	<span>git branch</span>
+
+	<span>ls</span> <!--показывать все дериктории доступные на этом уровне вложенности-->
+	<span>git init</span> <!-- создать папку git в выбрвнной директории (инициализировать git)-->
+	<span>git add .</span> <!-- следить за изменениями во всех файлах-->
+	<span>git commit -m ""</span> <!--сделать коммит-->
+	<span>git remote</span> <!--показывает удаленные ветки-->
+	<span>git branch</span> <!--показать все ветки-->
+	<span>git log</span> <!--показать все коммиты-->
+	<span>git checkout c1016</span> <!--откатиться до коммита c1016 (git log показывает хэш, из хэша берем первые 5 цифр)-->
 	<span>git checkout master</span> <!-- перейти на ветку master -->
+	<span>touch .gitignore</span> <!-- создать файл .gitignore в директории -->
 	<span>git merge develop</span> <!--с текущей ветки на develop скопировать -->
 	<span>git push origin master</span>	<!--запушить на удаленный репозиторий-->
-	</span>
+	<span>ssh-keygen</span>	<!--создать SSH ключ для связки с удаленным репозиторием-->
+	<span>git remote add origin git@github.com:OlesyaBrazhnikova/name_rep.git</span>	<!--вставляем путь нашего удаленного репозитория, кудабудем пушить-->
+
+	
 </body>
 </html>
