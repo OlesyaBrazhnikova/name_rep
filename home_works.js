@@ -56,7 +56,6 @@ definePositiveNegativeZero('-7');
 
 /**start HOME WORK 1.3**/
 function formatOfBytes(bytes) {
-	debugger;
 	let unit = ['Byte', 'KB', 'MB', 'GB'];
 	let count = 1024;
 	const result = Math.floor(Math.log(bytes) / Math.log(count));
@@ -64,22 +63,43 @@ function formatOfBytes(bytes) {
 }
 console.log(formatOfBytes('5000000'));
 
-/**endj HOME WORK 1.3**/
+/**end HOME WORK 1.3**/
 
 /**start HOME WORK 1.4**/
-// let credit_percent = .2;
-// let credit_volume = 100000;
-// let credit_years = 2;
-// function percentCredit(all, year, money) {
+let credit_percent = .2;
+let credit_volume = 100000;
+let credit_month = 48;
+let percent_per_year = credit_volume * credit_percent;
+let percentMonth = (percent_per_year / 12) + (credit_volume / credit_month);
+let totalSum = percentMonth * credit_month;
+let totalPercent = totalSum - credit_volume;
+console.log(percent_per_year);  //sum of percent per year
+console.log(totalSum); //total sum of credit with percent
+console.log(totalPercent); //sum of percent during all years
 
-// }
-// percentCredit()
-
+let year = 12;
+let monthes = 48;
+let percent = 20;
+let sum = 100000;
+var totalMonth, totalMonth_round;
+var total = Number(0);
+for (i = 1; i <= monthes; i++) {
+	 totalMonth = sum *(( percent / year) / 100);
+	 totalMonth_round = +Math.round(totalMonth * 100) / 100;
+	 total += totalMonth_round;
+}
+total = Math.round(total + sum);
+let percentTotal = total - sum;
+let percentYear = totalMonth * year;
+console.log(percentYear);  //sum of percent per year
+console.log(total); //total sum of credit with percent
+console.log(percentTotal); //sum of percent during all years
 /**end HOME WORK 1.4**/
 
 /** start HOME WORK 2.1 **/
-function reverseString(word) {
-		return word.split('').reverse().join('');
-};
-console.log(reverseString("dlrow olleh"));
+// циклами!!!
+// function reverseString(word) {
+// 		return word.split('').reverse().join('');
+// };
+// console.log(reverseString("dlrow olleh"));
 /** end HOME WORK 2.1 **/
