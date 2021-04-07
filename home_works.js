@@ -697,3 +697,33 @@ function avrMarks(arr) {
 }
 console.log(avrMarks(students), "new");
 /** end HOME WORK 5.3*/
+
+
+/** start HOME WORK 6.1
+ * Посчитать количество ссылок на странице, вывести их содержимое*/
+let links = [
+    {
+        title: "It is link_1",
+        description: "text for link_1",
+    },{
+        title: "It is link_2",
+        description: "text for link_2",
+    },{
+        title: "It is link_3",
+        description: "text for link_3",
+    },
+];
+let wrapper = document.querySelector("#wrapper");
+for(let link of links){
+let div = document.createElement("DIV");
+let a = document.createElement("A");
+a.innerHTML = link.title;
+div.appendChild(a);
+let p = document.createElement("P");
+p.innerHTML = link.description;
+div.appendChild(p);
+wrapper.appendChild(div);
+}
+let qLinks = document.getElementsByTagName('a').length;
+console.log(qLinks);
+/** end HOME WORK 6.1*/
