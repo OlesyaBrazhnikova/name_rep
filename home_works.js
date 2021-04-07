@@ -727,3 +727,193 @@ wrapper.appendChild(div);
 let qLinks = document.getElementsByTagName('a').length;
 console.log(qLinks);
 /** end HOME WORK 6.1*/
+
+/** start HOME WORK 6.2
+ * Посчитать количество тегов “p” на странице которые имеют класс “phrase” - вывести их содержимое*/
+let users = [
+    {
+        name: 'Ann',
+        surname: 'Kim',
+        age: 23,
+    },{
+        name: 'Mila',
+        surname: 'Kim',
+        age: 34,
+    },{
+        name: 'Aleksey',
+        surname: 'Kim',
+        age: 21,
+    },
+];
+let wrap = document.querySelector("#wrap");
+for (let user of users) {
+let div = document.createElement("DIV");
+div.className = "student";
+let p = document.createElement("P");
+p.className = "phrase";
+p.innerHTML = user.name;
+div.appendChild(p);
+let p_sur = document.createElement("P");
+p_sur.className = "surname";
+p_sur.innerHTML = user.surname;
+div.appendChild(p_sur);
+let p_age = document.createElement("P");
+p_age.className = "age";
+p_age.innerHTML = user.age;
+div.appendChild(p_age);
+wrap.appendChild(div);
+}
+
+let findP = document.getElementsByTagName("p").length;
+console.log(`All tags P: ${findP} items`);
+let findPhrase = document.getElementsByClassName("phrase").length;
+console.log(`Tags P with class phrase: ${findPhrase} items`);
+/** end HOME WORK 6.2*/
+
+/** start HOME WORK 6.3
+ * В задании из пятого урока, взять массив со студентами и вывести их на страницу
+ * согласно сверстанной HTML-структуре, рядом с каждым студентом вывести крестик - по нажатию
+ * на который студент будет удален (удаляется как со страницы, так и с объекта), если был удален
+ * последний студент написать текстовое сообщение (“Студенты не найдены”)*/
+let students = [
+    {
+        name: 'Ivan',
+        estimate: 4,
+        course: 1,
+        active: true
+    },
+    {
+        name: 'Kate',
+        estimate: 3,
+        course: 1,
+        active: true
+    },
+    {
+        name: 'Alex',
+        estimate: 2,
+        course: 4,
+        active: false
+    },
+    {
+        name: 'Sergey',
+        estimate: 5,
+        course: 2,
+        active: true
+    },
+    {
+        name: 'Masha',
+        estimate: 4,
+        course: 3,
+        active: true
+    },
+    {
+        name: 'Lily',
+        estimate: 2,
+        course: 1,
+        active: false
+    },
+    {
+        name: 'Misha',
+        estimate: 4,
+        course: 3,
+        active: true
+    },
+    {
+        name: 'Ksenia',
+        estimate: 5,
+        course: 1,
+        active: false
+    },
+    {
+        name: 'Marina',
+        estimate: 4,
+        course: 4,
+        active: true
+    },
+    {
+        name: 'Ivan',
+        estimate: 5,
+        course: 1,
+        active: true
+    },
+    {
+        name: 'Kate',
+        estimate: 3,
+        course: 4,
+        active: true
+    },
+    {
+        name: 'Alex',
+        estimate: 2,
+        course: 3,
+        active: false
+    },
+    {
+        name: 'Sergey',
+        estimate: 5,
+        course: 2,
+        active: true
+    },
+    {
+        name: 'Masha',
+        estimate: 4,
+        course: 2,
+        active: true
+    },
+    {
+        name: 'Lily',
+        estimate: 2,
+        course: 5,
+        active: true
+    },
+    {
+        name: 'Misha',
+        estimate: 4,
+        course: 5,
+        active: true
+    },
+    {
+        name: 'Ksenia',
+        estimate: 5,
+        course: 5,
+        active: false
+    },
+    {
+        name: 'Marina',
+        estimate: 5,
+        course: 4,
+        active: true
+    },
+];
+let blockStudents = document.getElementById('students');
+for (let student of students) {
+    let div = document.createElement("DIV");
+    div.className = 'student';
+    let name = document.createElement("P");
+    name.className = "name";
+    name.innerHTML = student.name;
+    div.appendChild(name);
+    let estimate = document.createElement("P");
+    estimate.className = "estimate";
+    estimate.innerHTML = 'estimate: ' + student.estimate;
+    div.appendChild(estimate);
+    let course = document.createElement("P");
+    course.className = "course";
+    course.innerHTML = 'course: ' + student.course;
+    div.appendChild(course);
+    let active = document.createElement("P");
+
+    const val = student.active === true;
+    val ? active.className = "active" : active.className = "disabled";
+    active.innerHTML = student.active;
+    div.appendChild(active);
+
+    let cross = document.createElement("A");
+    cross.className = "close";
+    div.appendChild(cross);
+    blockStudents.appendChild(div);
+}
+$('.close').on('click', function (){
+    $(this).parent('.student').remove();
+});
+/** end HOME WORK 6.3*/
